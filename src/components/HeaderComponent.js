@@ -61,16 +61,18 @@ class Header extends Component {
 				<Jumbotron className='fluid'>
 					<div className='container'>
 						<div className='row'>
+							<div className='col-3  col-md-2'>
+								<img
+									src='assets/Codinglogo.png'
+									height='83'
+									width='83'
+									alt='codebrooms'
+								/>
+							</div>
+							<div className='col-9 col-md-6 align-self-center' height='83'>
+								<h1 className=''>CodeBrooms</h1>
+							</div>
 							<div className='col-12'>
-								<h1 className='mr-auto'>
-									<img
-										src='assets/Codinglogo.png'
-										height='83'
-										width='83'
-										alt='codebrooms'
-									/>
-									CodeBrooms
-								</h1>
 								<p className='ml-3 d-none d-sm-block'>
 									A place to brush up your competetive programming skills...
 									happy coding.
