@@ -7,6 +7,10 @@ import {
 	Jumbotron,
 	NavbarToggler,
 	Collapse,
+	DropdownItem,
+	DropdownToggle,
+	UncontrolledDropdown,
+	DropdownMenu,
 } from 'reactstrap';
 
 class Header extends Component {
@@ -39,11 +43,23 @@ class Header extends Component {
 										Home
 									</NavLink>
 								</NavItem>
-								<NavItem>
-									<NavLink className='nav-link' to='/laddres'>
+								<UncontrolledDropdown nav inNavbar>
+									<DropdownToggle nav caret>
 										Laddres
-									</NavLink>
-								</NavItem>
+									</DropdownToggle>
+									<DropdownMenu right id='nav-dropdown'>
+										<DropdownItem>
+											<NavLink className='nav-link' to='/laddres/division'>
+												Division Ladders
+											</NavLink>
+										</DropdownItem>
+										<DropdownItem>
+											<NavLink className='nav-link' to='/laddres/rating'>
+												Rating Ladders
+											</NavLink>
+										</DropdownItem>
+									</DropdownMenu>
+								</UncontrolledDropdown>
 								<NavItem>
 									<NavLink className='nav-link' to='/categories'>
 										Categories

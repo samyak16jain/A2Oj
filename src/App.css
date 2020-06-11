@@ -3,3 +3,8 @@
 	margin: 0px auto;
 	background: rgb(240, 240, 240);
 }
+
+#nav-dropdown {
+	font-weight: bold;
+	background-color: #ff4444;
+}
