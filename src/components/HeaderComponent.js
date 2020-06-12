@@ -45,16 +45,16 @@ class Header extends Component {
 								</NavItem>
 								<UncontrolledDropdown nav inNavbar>
 									<DropdownToggle nav caret>
-										Laddres
+										Ladders
 									</DropdownToggle>
 									<DropdownMenu right id='nav-dropdown'>
 										<DropdownItem>
-											<NavLink className='nav-link' to='/laddres/division'>
+											<NavLink className='nav-link' to='/divisionladders'>
 												Division Ladders
 											</NavLink>
 										</DropdownItem>
 										<DropdownItem>
-											<NavLink className='nav-link' to='/laddres/rating'>
+											<NavLink className='nav-link' to='/ratingladders'>
 												Rating Ladders
 											</NavLink>
 										</DropdownItem>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardText, CardBody, CardTitle, CardHeader } from 'reactstrap';
+import { Card, CardText, CardBody, CardHeader } from 'reactstrap';
 
 function RenderCard({ item }) {
 	return (
@@ -16,8 +16,8 @@ function RenderCard({ item }) {
 
 function Home() {
 	const ladderinfo = {
-		title: 'Laddres',
-		description: 'Climb laddres of diffrent difficulty and rating',
+		title: 'Ladders',
+		description: 'Climb ladders of diffrent difficulty and rating',
 	};
 	const categoryinfo = {
 		title: 'Categories',
