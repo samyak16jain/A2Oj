@@ -17,12 +17,13 @@ function RenderCard({ item }) {
 function Home() {
 	const ladderinfo = {
 		title: 'Ladders',
-		description: 'Climb ladders of diffrent difficulty and rating',
+		description: 'Climb ladders of different difficulty and rating',
 	};
 	const categoryinfo = {
 		title: 'Categories',
 		description: 'Improve specific types of problems',
 	};
+	
 	return (
 		<div className='container'>
 			<div className='row align-items-start'>
