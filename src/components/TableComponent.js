@@ -2,21 +2,21 @@ import React,{Component } from 'react';
 import {Link} from 'react-router-dom';
 import { Table } from 'reactstrap';
 
-class Category extends Component {
+class TableComponent extends Component {
     constructor(props){
         super(props);
     }
 
     render(){
-        const RenderCategories = ({categoryList})=> {
+        const RenderTable = ({itemList,itemType})=> {
             return (
-                categoryList.map((category) => {
+                itemList.map((item) => {
                     return (
-                        <tr key = {category.id}>
-                            <td>{category.id}</td>
+                        <tr key = {item.id}>
+                            <td>{item.id}</td>
                             <td>
-                            <Link to={`/categories/${category.id}`}>
-                            {category.name}
+                            <Link to={`/${itemType}/${item.id}`}>
+                            {item.name}
                             </Link>
                             </td>
                         </tr>
@@ -24,11 +24,12 @@ class Category extends Component {
                 })
             );
         }
+
         return (
             <div className='row'>
             <div className='col-6 offset-md-2'>
                 <h1 className= "text-center">
-                     CATEGORY LADDER 
+                    {this.props.itemName} LADDER 
                 </h1>
             </div>
             <div className='col-6 offset-md-2'>
@@ -40,7 +41,7 @@ class Category extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <RenderCategories  categoryList = {this.props.categoryList}/>
+                        <RenderTable  itemList = {this.props.itemList} itemType = {this.props.itemType}/>
                     </tbody>
                 </Table>
             </div>
@@ -49,4 +50,4 @@ class Category extends Component {
     }
 }
 
-export default Category;
+export default TableComponent;

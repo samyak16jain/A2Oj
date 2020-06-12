@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
-import Category from './CategoriesComponent';
+import TableComponent from './TableComponent';
 import ProblemTable from './ProblemsComponent';
 
 import { CATEGORIES } from '../shared/Problem_Category_wise';
@@ -27,16 +27,30 @@ class Main extends Component {
 			  <ProblemTable item={this.state.probCatWise.filter((it)=> it.id === parseInt(match.params.categoryId,10))[0]}/>
 			);
 		};
+
+		const DivisionWithId = ({match}) => {
+			return(
+			  <ProblemTable item={this.state.probDivWise.filter((it)=> it.id === parseInt(match.params.divisionId,10))[0]}/>
+			);
+		};
+
+		const RatingWithId = ({match}) => {
+			return(
+			  <ProblemTable item={this.state.ProbRatWise.filter((it)=> it.id === parseInt(match.params.ratingId,10))[0]}/>
+			);
+		};
 	
 		return (
 			<div>
 				<Header />
 				<Switch>
 					<Route path='/home' component={Home} />
-					<Route exact path='/divisionladders' component='' />
-					<Route exact path='/ratingladders' component='' />
-					<Route exact path='/categories' component={()=> <Category categoryList = {this.state.probCatWise} />} />
-					<Route path='/categories/:categoryId' component={CategoryWithId} />
+					<Route exact path='/divisionladders' component={()=> <TableComponent itemList = {this.state.probDivWise} itemName='DIVISION' itemType='divisionladders'/>} />
+					<Route exact path='/ratingladders' 	 component={()=> <TableComponent itemList = {this.state.ProbRatWise} itemName='RATING' itemType='ratingladders'/>}/>
+					<Route exact path='/categories'      component={()=> <TableComponent itemList = {this.state.probCatWise} itemName='CATEGORY' itemType='categories'/>} />
+					<Route path='/divisionladders/:divisionId' component={DivisionWithId} />
+					<Route path='/ratingladders/:ratingId' 	   component={RatingWithId} />
+					<Route path='/categories/:categoryId'      component={CategoryWithId} />
 					<Route path='/aboutpage' component='' />
 					<Redirect to='/home' />
 				</Switch>
