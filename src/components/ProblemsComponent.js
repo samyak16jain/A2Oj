@@ -2,10 +2,10 @@ import React from 'react';
 import { Table } from 'reactstrap';
 
 function RenderProblems({ problems }) {
-	const problems = problems.map((problem) => {
+	const problemstable = problems.map((problem) => {
 		return (
 			<tr>
-				<td>{problem.id}</td>
+				<td>{problem['ID']}</td>
 				<td>
 					<a href={problem.link}>{problem['Problem Name']}</a>
 				</td>
@@ -13,14 +13,18 @@ function RenderProblems({ problems }) {
 			</tr>
 		);
 	});
-	return problems;
+	return problemstable;
 }
 
 function RenderTable({ item }) {
 	return (
 		<Table>
 			<thead>
-				<tr>{item.name}</tr>
+				<div className='container wrapper'>
+					<h3>
+						<tr>{item.name}</tr>
+					</h3>
+				</div>
 				<tr>
 					<th>#</th>
 					<th>Problem Name</th>
@@ -35,7 +39,7 @@ function RenderTable({ item }) {
 }
 
 const ProblemTable = (props) => {
-	return <RenderTable item={props} />;
+	return <RenderTable item={props.item} />;
 };
 
 export default ProblemTable;
