@@ -18,7 +18,9 @@ function RenderProblems({ problems }) {
 
 function RenderTable({ item }) {
 	return (
-		<Table>
+		<div className='row'>
+        <div className='col-6 offset-md-2'>
+		<Table bordered>
 			<thead>
 				<div className='container wrapper'>
 					<h3>
@@ -35,6 +37,8 @@ function RenderTable({ item }) {
 				<RenderProblems problems={item.problems} />
 			</tbody>
 		</Table>
+		</div>
+		</div>
 	);
 }
 

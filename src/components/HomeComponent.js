@@ -23,7 +23,7 @@ function Home() {
 		title: 'Categories',
 		description: 'Improve specific types of problems',
 	};
-	
+
 	return (
 		<div className='container'>
 			<div className='row align-items-start'>
