@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import {
 	Nav,
+	Button,
 	Navbar,
 	NavItem,
-	Jumbotron,
 	NavbarToggler,
 	Collapse,
 	DropdownItem,
 	DropdownToggle,
 	UncontrolledDropdown,
 	DropdownMenu,
-} from 'reactstrap';
+} from "reactstrap";
 
 class Header extends Component {
 	constructor(props) {
@@ -69,6 +69,17 @@ class Header extends Component {
 									<NavLink className='nav-link' to='/aboutpage'>
 										About page
 									</NavLink>
+								</NavItem>
+							</Nav>
+							<Nav className='ml-auto' navbar>
+								<NavItem>
+									<Button
+										color='#FFFFFF'
+										backgroundColor='#FFFFFF'
+										onClick={this.toggleModal}
+									>
+										<span className='fa fa-sign-in fa-lg'></span> Login
+									</Button>
 								</NavItem>
 							</Nav>
 						</Collapse>
