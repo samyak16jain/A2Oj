@@ -18,7 +18,7 @@ import {
 	FormGroup,
 	Input,
 	Label,
-	Col
+	Col,
 } from "reactstrap";
 
 class Header extends Component {
@@ -120,21 +120,21 @@ class Header extends Component {
 								/>
 							</FormGroup>
 							<FormGroup check>
-								<div className="row">
-									<div className="col-sm-12 col-md-6">
+								<div className='row'>
+									<div className='col-sm-12 col-md-6'>
 										<Label check>
 											<Input
 												type='checkbox'
 												name='remember'
 												innerRef={(input) => (this.remember = input)}
 											/>
-										Remember me
-									</Label>
+											Remember me
+										</Label>
 									</div>
-									<div className="col-sm-12 col-md-6">
+									<div className='col-sm-12 col-md-6'>
 										<Button type='submit' value='submit' color='primary'>
 											Login
-									</Button>
+										</Button>
 									</div>
 								</div>
 							</FormGroup>
