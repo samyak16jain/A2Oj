@@ -1,15 +1,15 @@
-import React from 'react';
-import { Table } from 'reactstrap';
+import React from "react";
+import { Table } from "reactstrap";
 
 function RenderProblems({ problems }) {
 	const problemstable = problems.map((problem) => {
 		return (
-			<tr>
-				<td>{problem['ID']}</td>
+			<tr key={problem.ID}>
+				<td>{problem.ID}</td>
 				<td>
-					<a href={problem.link}>{problem['Problem Name']}</a>
+					<a href={problem.link}>{problem["Problem Name"]}</a>
 				</td>
-				<td>{problem['Difficulty Level']}</td>
+				<td>{problem["Difficulty Level"]}</td>
 			</tr>
 		);
 	});

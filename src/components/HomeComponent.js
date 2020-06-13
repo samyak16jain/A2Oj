@@ -1,11 +1,11 @@
-import React from 'react';
-import { Card, CardText, CardBody, CardHeader } from 'reactstrap';
+import React from "react";
+import { Card, CardText, CardBody, CardHeader } from "reactstrap";
 
-import Jumbo from './JumbotoronComponent';
+import Jumbo from "./JumbotoronComponent";
 
 function RenderCard({ item }) {
 	return (
-		<Card className='mt-5' style={{ width: '30rem' }}>
+		<Card className='mt-5'>
 			<CardHeader>
 				<h4>{item.title}</h4>
 			</CardHeader>
@@ -18,23 +18,23 @@ function RenderCard({ item }) {
 
 function Home() {
 	const ladderinfo = {
-		title: 'Ladders',
-		description: 'Climb ladders of different difficulty and rating',
+		title: "Ladders",
+		description: "Climb ladders of different difficulty and rating",
 	};
 	const categoryinfo = {
-		title: 'Categories',
-		description: 'Improve specific types of problems',
+		title: "Categories",
+		description: "Improve specific types of problems",
 	};
 
 	return (
 		<>
 			<Jumbo />
 			<div className='container'>
-				<div className='row align-items-start'>
-					<div className='col-12 col-md m-1'>
+				<div className='row'>
+					<div className='col-sm-12 col-md-6'>
 						<RenderCard item={ladderinfo} />
 					</div>
-					<div className='col-12 col-md m-1'>
+					<div className='col-sm-12 col-md-6'>
 						<RenderCard item={categoryinfo} />
 					</div>
 				</div>
