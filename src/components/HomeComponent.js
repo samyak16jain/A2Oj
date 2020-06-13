@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, CardText, CardBody, CardHeader } from 'reactstrap';
 
+import Jumbo from './JumbotoronComponent';
+
 function RenderCard({ item }) {
 	return (
 		<Card className='mt-5' style={{ width: '30rem' }}>
@@ -25,16 +27,19 @@ function Home() {
 	};
 
 	return (
-		<div className='container'>
-			<div className='row align-items-start'>
-				<div className='col-12 col-md m-1'>
-					<RenderCard item={ladderinfo} />
-				</div>
-				<div className='col-12 col-md m-1'>
-					<RenderCard item={categoryinfo} />
+		<>
+			<Jumbo />
+			<div className='container'>
+				<div className='row align-items-start'>
+					<div className='col-12 col-md m-1'>
+						<RenderCard item={ladderinfo} />
+					</div>
+					<div className='col-12 col-md m-1'>
+						<RenderCard item={categoryinfo} />
+					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 

@@ -18,26 +18,28 @@ function RenderProblems({ problems }) {
 
 function RenderTable({ item }) {
 	return (
-		<div className='row'>
-        <div className='col-6 offset-md-2'>
-		<Table bordered>
-			<thead>
-				<div className='container wrapper'>
-					<h3>
-						<tr>{item.name}</tr>
-					</h3>
+		<div className='container mt-5'>
+			<div className='row'>
+				<div className='col-6 offset-md-2'>
+					<h3 className='text-center'>{item.name}</h3>
 				</div>
-				<tr>
-					<th>#</th>
-					<th>Problem Name</th>
-					<th>Difficulty level</th>
-				</tr>
-			</thead>
-			<tbody>
-				<RenderProblems problems={item.problems} />
-			</tbody>
-		</Table>
-		</div>
+			</div>
+			<div className='row'>
+				<div className='col-6 offset-md-2'>
+					<Table bordered>
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Problem Name</th>
+								<th>Difficulty level</th>
+							</tr>
+						</thead>
+						<tbody>
+							<RenderProblems problems={item.problems} />
+						</tbody>
+					</Table>
+				</div>
+			</div>
 		</div>
 	);
 }
