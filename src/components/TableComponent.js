@@ -22,25 +22,29 @@ class TableComponent extends Component {
 		};
 
 		return (
-			<div className='row mt-5'>
-				<div className='col-12 offset-md-2'>
-					<h1 className='text-center'>{this.props.itemName} Ladder</h1>
+			<div className="container">
+				<div className='row mt-5'>
+					<div className='col-sm-12 col-md-12'>
+						<h1 className='text-center'>{this.props.itemName} Ladder</h1>
+					</div>
 				</div>
-				<div className='col-12 col--md-6 offset-md-2'>
-					<Table bordered>
-						<thead>
-							<tr>
-								<td>#</td>
-								<th>Categories</th>
-							</tr>
-						</thead>
-						<tbody>
-							<RenderTable
-								itemList={this.props.itemList}
-								itemType={this.props.itemType}
-							/>
-						</tbody>
-					</Table>
+				<div className='row mt-5'>
+					<div className='col-sm-12 col-md-6 offset-md-3'>
+						<Table bordered>
+							<thead>
+								<tr>
+									<td>#</td>
+									<th>Categories</th>
+								</tr>
+							</thead>
+							<tbody>
+								<RenderTable
+									itemList={this.props.itemList}
+									itemType={this.props.itemType}
+								/>
+							</tbody>
+						</Table>
+					</div>
 				</div>
 			</div>
 		);
