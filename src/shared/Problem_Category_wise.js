@@ -173,7 +173,7 @@ export const CATEGORIES = [
 	},
 	{
 		id: 4,
-		name: 'Codeforces Div',
+		name: 'Codeforces Div. 2 - E Problems',
 		problems: [
 			{
 				ID: '1',
@@ -5242,7 +5242,7 @@ export const CATEGORIES = [
 	},
 	{
 		id: 11,
-		name: 'Codeforces Div',
+		name: 'Codeforces Div. 2 - A Problems',
 		problems: [
 			{
 				ID: '1',
@@ -17376,7 +17376,7 @@ export const CATEGORIES = [
 	},
 	{
 		id: 25,
-		name: 'Codeforces Div',
+		name: 'Codeforces Div. 2 - F Problems',
 		problems: [
 			{
 				ID: '1',
@@ -18215,7 +18215,7 @@ export const CATEGORIES = [
 	},
 	{
 		id: 26,
-		name: 'Codeforces Div',
+		name: 'Codeforces Div. 2 - B Problems',
 		problems: [
 			{
 				ID: '1',
@@ -50062,7 +50062,7 @@ export const CATEGORIES = [
 	},
 	{
 		id: 61,
-		name: 'Codeforces Div',
+		name: 'Codeforces Div. 1, D',
 		problems: [
 			{
 				ID: '1',
@@ -57033,7 +57033,7 @@ export const CATEGORIES = [
 	},
 	{
 		id: 85,
-		name: 'Codeforces Div',
+		name: 'Codeforces Div. 2 - C Problems',
 		problems: [
 			{
 				ID: '1',
@@ -62928,7 +62928,7 @@ export const CATEGORIES = [
 	},
 	{
 		id: 91,
-		name: 'Codeforces Div',
+		name: 'Codeforces Div. 2 - D Problems',
 		problems: [
 			{
 				ID: '1',
@@ -69340,4 +69340,3 @@ export const CATEGORIES = [
 		],
 	},
 ];
-
