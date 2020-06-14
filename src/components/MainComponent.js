@@ -1,24 +1,23 @@
 import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Header from "./HeaderComponent";
 import Home from "./HomeComponent";
 import TableComponent from "./TableComponent";
 import ProblemTable from "./ProblemsComponent";
 
-import { CATEGORIES } from "../shared/Problem_Category_wise";
-import { DIVISIONLADDERS } from "../shared/Problem_Division_Wise";
-import { RATINGLADDERS } from "../shared/Problem_Rating_Wise";
+const mapStateToProps = (state) => {
+	return {
+		probCatWise: state.probCatWise,
+		probDivWise: state.probDivWise,
+		ProbRatWise: state.ProbRatWise,
+	};
+};
 
 class Main extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			probCatWise: CATEGORIES,
-			probDivWise: DIVISIONLADDERS,
-			ProbRatWise: RATINGLADDERS,
-		};
 	}
 
 	render() {
@@ -26,7 +25,7 @@ class Main extends Component {
 			return (
 				<ProblemTable
 					item={
-						this.state.probCatWise.filter(
+						this.props.probCatWise.filter(
 							(it) => it.id === parseInt(match.params.categoryId, 10)
 						)[0]
 					}
@@ -38,7 +37,7 @@ class Main extends Component {
 			return (
 				<ProblemTable
 					item={
-						this.state.probDivWise.filter(
+						this.props.probDivWise.filter(
 							(it) => it.id === parseInt(match.params.divisionId, 10)
 						)[0]
 					}
@@ -50,7 +49,7 @@ class Main extends Component {
 			return (
 				<ProblemTable
 					item={
-						this.state.ProbRatWise.filter(
+						this.props.ProbRatWise.filter(
 							(it) => it.id === parseInt(match.params.ratingId, 10)
 						)[0]
 					}
@@ -68,7 +67,7 @@ class Main extends Component {
 						path='/divisionladders'
 						component={() => (
 							<TableComponent
-								itemList={this.state.probDivWise}
+								itemList={this.props.probDivWise}
 								itemName='Division'
 								itemType='divisionladders'
 							/>
@@ -79,7 +78,7 @@ class Main extends Component {
 						path='/ratingladders'
 						component={() => (
 							<TableComponent
-								itemList={this.state.ProbRatWise}
+								itemList={this.props.ProbRatWise}
 								itemName='Rating'
 								itemType='ratingladders'
 							/>
@@ -90,7 +89,7 @@ class Main extends Component {
 						path='/categories'
 						component={() => (
 							<TableComponent
-								itemList={this.state.probCatWise}
+								itemList={this.props.probCatWise}
 								itemName='Categories'
 								itemType='categories'
 							/>
@@ -110,4 +109,4 @@ class Main extends Component {
 	}
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));
