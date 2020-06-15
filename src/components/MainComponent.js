@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { fetchCategories } from "../redux/ActionCreators";
 
 import Header from "./HeaderComponent";
 import Home from "./HomeComponent";
@@ -15,14 +16,22 @@ const mapStateToProps = (state) => {
 	};
 };
 
+const mapDispatchToProps = (dispatch) => ({
+	fetchCategories: () => dispatch(fetchCategories()),
+});
+
 class Main extends Component {
 	constructor(props) {
 		super(props);
 	}
 
+	componentDidMount() {
+		this.props.fetchCategories();
+	}
+
 	render() {
 		const CategoryWithId = ({ match }) => {
-			return <ProblemTable item={this.props.probCatWise.filter((it) => it.id === parseInt(match.params.categoryId, 10))[0]} />;
+			return <ProblemTable item={this.props.probCatWise.probCatWise.filter((it) => it.id === parseInt(match.params.categoryId, 10))[0]} />;
 		};
 
 		const DivisionWithId = ({ match }) => {
@@ -40,7 +49,7 @@ class Main extends Component {
 					<Route path='/home' component={Home} />
 					<Route exact path='/divisionladders' component={() => <TableComponent itemList={this.props.probDivWise} itemName='Division' itemType='divisionladders' />} />
 					<Route exact path='/ratingladders' component={() => <TableComponent itemList={this.props.ProbRatWise} itemName='Rating' itemType='ratingladders' />} />
-					<Route exact path='/categories' component={() => <TableComponent itemList={this.props.probCatWise} itemName='Categories' itemType='categories' />} />
+					<Route exact path='/categories' component={() => <TableComponent itemList={this.props.probCatWise.probCatWise} itemName='Categories' itemType='categories' />} />
 					<Route path='/divisionladders/:divisionId' component={DivisionWithId} />
 					<Route path='/ratingladders/:ratingId' component={RatingWithId} />
 					<Route path='/categories/:categoryId' component={CategoryWithId} />
@@ -52,4 +61,4 @@ class Main extends Component {
 	}
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
