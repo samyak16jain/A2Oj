@@ -1,14 +1,14 @@
-import { createStore, combineReducers } from "redux";
-import { ProbCatWise } from "./probCatWise";
-import { ProbDivWise } from "./probDivWise";
-import { ProbRatWise } from "./probRatWise";
+import { createStore, combineReducers } from 'redux';
+import { categories } from './categories';
+import { divisionlad } from './divisionlad';
+import { ratinglad } from './ratinglad';
 
 export const ConfigureStore = () => {
 	const store = createStore(
 		combineReducers({
-			probCatWise: ProbCatWise,
-			probDivWise: ProbDivWise,
-			probRatWise: ProbRatWise,
+			categories: categories,
+			divisionlad: divisionlad,
+			ratinglad: ratinglad,
 		})
 	);
 	return store;

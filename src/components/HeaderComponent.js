@@ -1,24 +1,6 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import {
-	Nav,
-	Button,
-	Navbar,
-	NavItem,
-	NavbarToggler,
-	Collapse,
-	DropdownItem,
-	DropdownToggle,
-	UncontrolledDropdown,
-	DropdownMenu,
-	Modal,
-	ModalHeader,
-	ModalBody,
-	Form,
-	FormGroup,
-	Input,
-	Label,
-} from "reactstrap";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Nav, Button, Navbar, NavItem, NavbarToggler, Collapse, DropdownItem, DropdownToggle, UncontrolledDropdown, DropdownMenu, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
 
 class Header extends Component {
 	constructor(props) {
@@ -48,14 +30,7 @@ class Header extends Component {
 
 	handleLogin(event) {
 		this.toggleModal();
-		alert(
-			"Username: " +
-				this.username.value +
-				" Password: " +
-				this.password.value +
-				" Remember: " +
-				this.remember.checked
-		);
+		alert('Username: ' + this.username.value + ' Password: ' + this.password.value + ' Remember: ' + this.remember.checked);
 		event.preventDefault();
 	}
 
@@ -116,31 +91,17 @@ class Header extends Component {
 						<Form onSubmit={this.handleLogin}>
 							<FormGroup>
 								<Label htmlFor='username'>Username</Label>
-								<Input
-									type='text'
-									id='username'
-									name='username'
-									innerRef={(input) => (this.username = input)}
-								/>
+								<Input type='text' id='username' name='username' innerRef={(input) => (this.username = input)} />
 							</FormGroup>
 							<FormGroup>
 								<Label htmlFor='password'>Password</Label>
-								<Input
-									type='password'
-									id='password'
-									name='password'
-									innerRef={(input) => (this.password = input)}
-								/>
+								<Input type='password' id='password' name='password' innerRef={(input) => (this.password = input)} />
 							</FormGroup>
 							<FormGroup check>
 								<div className='row'>
 									<div className='col-sm-12 col-md-6'>
 										<Label check>
-											<Input
-												type='checkbox'
-												name='remember'
-												innerRef={(input) => (this.remember = input)}
-											/>
+											<Input type='checkbox' name='remember' innerRef={(input) => (this.remember = input)} />
 											Remember me
 										</Label>
 									</div>

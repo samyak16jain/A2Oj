@@ -1,12 +1,8 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Table } from "reactstrap";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Table } from 'reactstrap';
 
 class TableComponent extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		const RenderTable = ({ itemList, itemType }) => {
 			return itemList.map((item) => {
@@ -38,10 +34,7 @@ class TableComponent extends Component {
 								</tr>
 							</thead>
 							<tbody>
-								<RenderTable
-									itemList={this.props.itemList}
-									itemType={this.props.itemType}
-								/>
+								<RenderTable itemList={this.props.itemList} itemType={this.props.itemType} />
 							</tbody>
 						</Table>
 					</div>
