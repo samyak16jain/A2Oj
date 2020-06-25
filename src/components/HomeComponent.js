@@ -1,7 +1,7 @@
-import React from "react";
-import { Card, CardText, CardBody, CardHeader } from "reactstrap";
+import React from 'react';
+import { Card, CardText, CardBody, CardHeader } from 'reactstrap';
 
-import Jumbo from "./JumbotoronComponent";
+import Jumbo from './JumbotoronComponent';
 
 function RenderCard({ item }) {
 	return (
@@ -18,12 +18,12 @@ function RenderCard({ item }) {
 
 function Home() {
 	const ladderinfo = {
-		title: "Ladders",
-		description: "Climb ladders of different difficulty and rating",
+		title: 'Ladders',
+		description: 'Climb ladders of different difficulty and rating',
 	};
 	const categoryinfo = {
-		title: "Categories",
-		description: "Improve specific types of problems",
+		title: 'Categories',
+		description: 'Improve specific types of problems',
 	};
 
 	return (

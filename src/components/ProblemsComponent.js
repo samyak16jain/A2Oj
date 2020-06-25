@@ -20,14 +20,14 @@ function RenderProblems({ problems }) {
 
 function RenderTable({ item }) {
 	return (
-		<div className='container mt-5'>
-			<div className='row'>
-				<div className='col-6 offset-md-2'>
+		<div className='container'>
+			<div className='row mt-5'>
+				<div className='col-sm-12 col-md-12'>
 					<h3 className='text-center'>{item.name}</h3>
 				</div>
 			</div>
-			<div className='row'>
-				<div className='col-6 offset-md-2'>
+			<div className='row mt-3'>
+				<div className='col-6 offset-md-3'>
 					<Table bordered>
 						<thead>
 							<tr>
